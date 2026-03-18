@@ -3,50 +3,53 @@ import React from 'react';
 const Contact = () => {
   return (
     <section id="contato" style={{ 
-      padding: '60px 20px', 
-      textAlign: 'center', 
-      backgroundColor: '#ffffff',
+      padding: '40px 20px', // Padding menor para telas de celular
+      backgroundColor: '#f8fafc', 
+      textAlign: 'center',
       borderTop: '1px solid #e2e8f0'
     }}>
-      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '100%', margin: '0 auto' }}>
         <h2 style={{ 
-          fontSize: '2.5rem', 
-          color: '#0f172a', 
-          marginBottom: '20px',
-          fontWeight: 'bold' 
+          fontSize: '1.25rem', // Fonte ajustada para leitura no celular
+          color: '#1e293b', 
+          marginBottom: '8px',
+          fontWeight: '700' 
         }}>
-          Pronto(a) para simplificar sua rotina?
+          Ainda tem dúvidas?
         </h2>
         
         <p style={{ 
-          fontSize: '1.2rem', 
-          color: '#4b5563', 
-          marginBottom: '40px',
-          lineHeight: '1.6' 
+          color: '#64748b', 
+          fontSize: '0.95rem', 
+          marginBottom: '20px',
+          lineHeight: '1.4' 
         }}>
-          Mantenha o controle total da sua agenda com mais facilidade. O <strong>AgendaBot</strong> funciona como um assistente que organiza seus horários e <strong>deixa tudo pronto para você finalizar o atendimento</strong> e focar no fechamento de novos clientes.
+          Chame nosso suporte técnico agora.
         </p>
 
+        {/* Botão de WhatsApp Robusto para o Toque */}
         <a 
-          href="https://wa.me/SEUNUMEROAQUI" 
-          target="_blank" 
+          href="https://wa.me/5521965870535?text=Olá!%20Tenho%20uma%20dúvida%20sobre%20o%20AgendaBot."
+          target="_blank"
           rel="noopener noreferrer"
-          style={{ 
-            display: 'inline-block',
-            padding: '18px 40px', 
-            backgroundColor: '#25d366', // Cor clássica do WhatsApp
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '12px',
+            width: '100%', // No mobile, botões largos são melhores
+            maxWidth: '300px', 
+            padding: '16px', // Área de clique maior (melhor UX)
+            backgroundColor: '#2563eb', 
             color: '#fff', 
+            borderRadius: '12px',
             textDecoration: 'none',
-            borderRadius: '50px', 
-            fontSize: '1.2rem', 
-            fontWeight: 'bold', 
-            boxShadow: '0 10px 15px -3px rgba(37, 211, 102, 0.3)',
-            transition: 'transform 0.2s ease'
+            fontWeight: 'bold',
+            fontSize: '1rem',
+            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' // Sombra leve para dar profundidade
           }}
-          onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
-          onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
         >
-          Falar com um Consultor no WhatsApp
+          <span style={{ fontSize: '1.3rem' }}>💬</span> Falar com Suporte
         </a>
       </div>
     </section>

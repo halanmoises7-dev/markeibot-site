@@ -4,6 +4,6 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif; /* Ou a fonte que preferir */
-  padding-top: 80px; /* Espaço para o menu que é fixo */
+  font-family: 'Inter', sans-serif;
+  padding-top: 80px;
 }

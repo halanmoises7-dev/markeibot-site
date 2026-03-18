@@ -1,0 +1,108 @@
+/* Seção Principal */
+.pricing-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pricing-header {
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.pricing-title {
+  font-size: 2rem;
+  color: #0f172a;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.pricing-subtitle {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* O Card de Preço */
+.pricing-card {
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 35px 25px;
+  border-radius: 24px;
+  background-color: #f3f3f3;
+  border: 1px solid #dcdcdd;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
+}
+
+.pricing-badge {
+  background-color: #eff6ff;
+  color: #2563eb;
+  padding: 5px 12px;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 900;
+  display: inline-block;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+}
+
+.price-container {
+  margin-bottom: 25px;
+}
+
+.currency {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  vertical-align: super;
+}
+
+.price-value {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -3px;
+}
+
+.price-period {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+/* Lista de Benefícios */
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 35px;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.benefit-item {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.check-icon {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+/* Botão Final */
+.pricing-button {
+  display: block;
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}

@@ -4,25 +4,23 @@ import Header from './components/Header';
 import Main from './components/Main';
 import About from './components/About';
 import CardsSection from './components/Cards';
+import Pricing from './components/Main/Pricing';
 import Contact from './components/Contact/index';
 import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy/index';
 import './index.css';
 
-// Componente para a Página Principal (Landing Page) - LIMPO
 const Home = () => (
   <>
     <Header />
-    <Main />         {/* Esta é a sua seção "Início" */}
-    <About />        {/* Esta é a sua seção "Sobre" */}
-    <CardsSection />  {/* Esta é a sua seção "Recursos" */}
+    <Main />
+    <About />
+    <CardsSection />
+    <Pricing />
     <Contact />
-    
-    {/* Removi as <section> manuais que estavam duplicando o conteúdo */}
   </>
 );
 
-// Componente para a página de política
 const PoliticaPrivacidade = () => (
   <div style={{ padding: '100px 20px', textAlign: 'center', minHeight: '80vh' }}>
     <h1>Política de Privacidade</h1>
