@@ -33,14 +33,9 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          {/* Rota principal */}
           <Route path="/" element={<Home />} />
-          
-          {/* Rota para a página de política */}
           <Route path="/politica" element={<PrivacyPolicy />} />
         </Routes>
-
-        {/* O Footer aparece em todas as páginas */}
         <Footer />
       </div>
     </Router>

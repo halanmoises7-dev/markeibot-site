@@ -4,7 +4,7 @@ const Main = () => {
   padding: '80px 20px', 
   textAlign: 'center', 
   backgroundColor: '#f0f4f8',
-  minHeight: 'calc(100vh - 80px)', // A MÁGICA ESTÁ AQUI
+  minHeight: 'calc(100vh - 80px)',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -15,11 +15,10 @@ const Main = () => {
       <p style={{ fontSize: '1.2rem', color: '#4b5563', maxWidth: '700px', margin: '0 auto 30px' }}>
         O assistente inteligente que organiza seus horários no WhatsApp 24h por dia, para você focar no que realmente importa: <strong style={{ color: '#0f172a' }}>seus clientes.</strong>
       </p>
-      {/* Troque a tag <button> por <a> para funcionar o pulo de página */}
         <a 
   href="#planos" 
   style={{ 
-    textDecoration: 'none', // Remove o sublinhado de link
+    textDecoration: 'none',
     display: 'inline-block',
     padding: '15px 35px', 
     backgroundColor: '#2563eb', 

@@ -1,4 +1,4 @@
-import './Pricing.css'; // Importante: verifica se o caminho está correto!
+import './Pricing.css';
 
 const Pricing = () => {
   return (

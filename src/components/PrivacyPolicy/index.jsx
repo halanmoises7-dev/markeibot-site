@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 
 const PrivacyPolicy = () => {
-  // Isso garante que, ao entrar na página, o scroll comece do topo
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -28,7 +27,6 @@ const PrivacyPolicy = () => {
         <h2>4. Seus Direitos (LGPD)</h2>
         <p>Você tem o direito de acessar, corrigir ou excluir seus dados a qualquer momento entrando em contato com nosso suporte.</p>
         
-        {/* Usando Link em vez de <a> para evitar o refresh da página */}
         <Link to="/" className="back-link">Voltar para o Início</Link>
       </section>
     </div>

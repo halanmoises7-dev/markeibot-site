@@ -5,6 +5,7 @@ const About = () => {
     <section id="sobre" className="about-section">
       <div className="about-container">
         <div className="about-image">
+          {/* AJUSTE DA IMAGEM MOCKUP*/}
           <div className="image-placeholder" style={{ 
             width: '100%', 
             height: '100%', 
@@ -35,7 +36,6 @@ const About = () => {
             precise parar o que está fazendo.
           </p>
           
-          {/* Wrapper criado para alinhar a lista e o botão lado a lado */}
           <div className="about-footer-wrapper">
             <ul className="about-list">
               <li>✅ Integração direta com WhatsApp</li>

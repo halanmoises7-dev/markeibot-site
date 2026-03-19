@@ -52,11 +52,10 @@
   margin-bottom: 25px;
 }
 
-/* --- NOVO: Container para alinhar lista e botão --- */
 .about-footer-wrapper {
   display: flex;
   align-items: center;
-  gap: 40px; /* Espaço entre a lista e o botão */
+  gap: 40px;
   margin-top: 20px;
 }
 
@@ -70,10 +69,9 @@
   margin-bottom: 12px;
   font-weight: 500;
   color: #444;
-  white-space: nowrap; /* Evita que o texto da lista quebre e empurre o botão */
+  white-space: nowrap;
 }
 
-/* Estilo do Botão (Local Laranja) */
 .btn-ver-preco {
   display: inline-flex;
   align-items: center;
@@ -89,12 +87,11 @@
   white-space: nowrap;
 }
 
-/* Ajuste para Celular */
 @media (max-width: 768px) {
   .about-container { text-align: center; }
   
   .about-footer-wrapper {
-    flex-direction: column; /* No celular, o botão vai para baixo */
+    flex-direction: column;
     align-items: center; 
     gap: 25px;
   }
@@ -103,7 +100,7 @@
     text-align: left; 
     display: inline-block; 
     width: 100%; 
-    white-space: normal; /* No celular a linha pode quebrar */
+    white-space: normal;
   }
 
   .btn-ver-preco {
