@@ -1,6 +1,6 @@
 .cards-container {
   padding: 80px 20px;
-  background-color: #f8f9fa;
+  background-color: #f8fafc; /* Fundo da seção em cinza bem claro para destacar os cards */
 }
 
 .content-limit {
@@ -12,7 +12,8 @@
   text-align: center;
   font-size: 2rem;
   margin-bottom: 50px;
-  color: #222;
+  color: #1e293b; /* Título principal da seção em tom escuro para leitura */
+  font-weight: 800;
 }
 
 .cards-grid {
@@ -22,45 +23,48 @@
 }
 
 .feature-card {
-  background: #fff;
+  background: #2563eb; /* AZUL PRINCIPAL */
   padding: 40px 25px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2); /* Sombra levemente azulada */
   transition: all 0.3s ease;
   border-bottom: 4px solid transparent;
 }
 
 .feature-card:hover {
   transform: translateY(-8px);
-  border-bottom: 4px solid #007bff;
+  background: #1d4ed8; /* Azul um pouco mais intenso no hover */
+  border-bottom: 4px solid #ffffff; /* Borda branca que "acende" no hover */
 }
 
 .icon-wrapper {
-  /* O font-size foi removido, pois agora usamos imagens em vez de texto/emoji */
   margin-bottom: 20px;
-  display: inline-flex; /* Alterado para flex para centralizar a imagem perfeitamente */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 64px; /* Altura fixa para manter o padrão visual dos cards */
+  height: 64px;
 }
 
-/* Nova classe adicionada para controlar as imagens inseridas na pasta public */
+/* Nova classe para as imagens */
 .feature-image {
   width: 100%;
-  max-width: 64px; /* Tamanho base da imagem, equivalente a um ícone grande */
+  max-width: 64px;
   max-height: 100%;
-  object-fit: contain; /* Garante que a imagem não fique esticada ou achatada */
+  object-fit: contain;
+  /* Esse filtro transforma ícones pretos em BRANCO automaticamente */
+  filter: brightness(0) invert(1); 
 }
 
 .feature-card h3 {
   font-size: 1.25rem;
-  color: #222;
+  color: #ffffff; /* TÍTULO DO CARD EM BRANCO */
   margin-bottom: 15px;
+  font-weight: 700;
 }
 
 .feature-card p {
-  color: #666;
+  color: rgba(255, 255, 255, 0.9); /* BRANCO SUAVE (melhor para leitura longa) */
   font-size: 0.95rem;
   line-height: 1.6;
 }
