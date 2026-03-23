@@ -1,10 +1,15 @@
 import './styles.css';
 
-const FeatureCard = ({ icon, title, description }) => {
+const FeatureCard = ({ image, title, description }) => {
   return (
     <div className="feature-card">
       <div className="icon-wrapper">
-        {icon}
+        {/* Renderiza a imagem passando o caminho que vem do CardsSection */}
+        <img 
+          src={image} 
+          alt={`Ilustração para ${title}`} 
+          className="feature-image" 
+        />
       </div>
       <h3>{title}</h3>
       <p>{description}</p>
