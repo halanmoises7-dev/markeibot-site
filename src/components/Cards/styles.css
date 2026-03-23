@@ -1,6 +1,6 @@
 .cards-container {
   padding: 80px 20px;
-  background-color: #f8fafc; /* Fundo da seção em cinza bem claro para destacar os cards */
+  background-color: #f8fafc; /* Mantive o fundo da seção claro para destacar os cards escuros */
 }
 
 .content-limit {
@@ -12,8 +12,7 @@
   text-align: center;
   font-size: 2rem;
   margin-bottom: 50px;
-  color: #1e293b; /* Título principal da seção em tom escuro para leitura */
-  font-weight: 800;
+  color: #1e293b; /* Título principal escuro para contraste com o fundo claro da seção */
 }
 
 .cards-grid {
@@ -23,19 +22,21 @@
 }
 
 .feature-card {
-  background: #2563eb; /* AZUL PRINCIPAL */
+  background: #1e293b; /* TEMA DARK: Fundo ardósia escuro para o card */
   padding: 40px 25px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2); /* Sombra levemente azulada */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Sombra mais densa e escura */
   transition: all 0.3s ease;
+  border: 1px solid #334155; /* Borda fina e escura para dar profundidade */
   border-bottom: 4px solid transparent;
 }
 
 .feature-card:hover {
   transform: translateY(-8px);
-  background: #1d4ed8; /* Azul um pouco mais intenso no hover */
-  border-bottom: 4px solid #ffffff; /* Borda branca que "acende" no hover */
+  background: #334155; /* Um tom de escuro ligeiramente mais claro no hover */
+  border-bottom: 4px solid #3b82f6; /* Borda inferior azul vibrante que "acende" */
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15); /* Efeito glow azulado no hover */
 }
 
 .icon-wrapper {
@@ -52,19 +53,17 @@
   max-width: 64px;
   max-height: 100%;
   object-fit: contain;
-  /* Esse filtro transforma ícones pretos em BRANCO automaticamente */
-  filter: brightness(0) invert(1); 
+  /* MANTENDO A COR ORIGINAL: Nenhum filtro de inversão ou brilho foi adicionado */
 }
 
 .feature-card h3 {
   font-size: 1.25rem;
-  color: #ffffff; /* TÍTULO DO CARD EM BRANCO */
+  color: #f8fafc; /* LETRAS BRANCAS (Off-white para conforto) */
   margin-bottom: 15px;
-  font-weight: 700;
 }
 
 .feature-card p {
-  color: rgba(255, 255, 255, 0.9); /* BRANCO SUAVE (melhor para leitura longa) */
+  color: #94a3b8; /* LETRAS CLARAS (Cinza azulado claro para leitura) */
   font-size: 0.95rem;
   line-height: 1.6;
 }
