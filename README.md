@@ -1,16 +1,59 @@
-# React + Vite
+# AgendaBot - Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Transforme seu WhatsApp em uma secretária inteligente que trabalha 24h por dia.
 
-Currently, two official plugins are available:
+O **AgendaBot** é um Micro-SaaS focado em automação de agendamentos para pequenos e médios negócios. Esta landing page foi desenvolvida para apresentar o produto, converter leads e facilitar o contato direto via WhatsApp.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Design Modular**: Componentes isolados para facilitar a manutenção e escalabilidade.
+- **Navegação Inteligente**: Menu responsivo (Hambúrguer) para dispositivos móveis.
+- **Conversão Direta**: Formulário de contato que gera mensagens pré-estruturadas para o WhatsApp.
+- **Tabela de Preços**: Seção dedicada para exibição de planos e gatilhos de venda.
+- **Performance**: Construído com Vite para um carregamento ultra-rápido.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Tecnologias e Ferramentas
+
+- **[React](https://reactjs.org/)** - Biblioteca principal.
+- **[Vite](https://vitejs.dev/)** - Build tool de próxima geração.
+- **[React Router Dom](https://reactrouter.com/)** - Gerenciamento de rotas.
+- **[CSS Modules/BEM Style]** - Estilização organizada e separada por componente.
+- **[Lucide React / Icons]** - Iconografia moderna (se aplicável).
+
+---
+
+## Estrutura de Pastas
+
+O projeto segue o padrão de **Component-Based Architecture**:
+
+```text
+src/
+ ├── assets/             # Imagens, ícones e logotipos
+ ├── components/         # Componentes reutilizáveis
+ │    ├── Header/        # Menu e Logo
+ │    ├── Main/          # Hero Section (Início)
+ │    ├── About/         # Seção sobre o robô
+ │    ├── Cards/         # Funcionalidades e diferenciais
+ │    ├── Pricing/       # Tabela de planos
+ │    ├── Contact/       # Formulário de lead para WhatsApp
+ │    └── Footer/        # Rodapé e links legais
+ ├── App.jsx             # Orquestrador de componentes e rotas
+ └── index.css           # Estilos globais e variáveis de cor
+
+
+## Desenvolvedor
+Halan Moisés - Mídia & Web
+
+Profissional Multi-hyphenate: Designer, Web Dev e Fotógrafo.
+
+Rio de Janeiro, Brasil.
+
+
+## Licença
+Este projeto é de uso exclusivo para o Micro-SaaS AgendaBot.
+
+Copyright © 2026 Halan Moisés.
