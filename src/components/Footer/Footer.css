@@ -1,8 +1,7 @@
-/* --- ESTILIZAÇÃO DO FOOTER (VERSÃO CORRIGIDA) --- */
 .footer {
   background-color: #121212;
   color: #fff;
-  padding: 30px 20px 20px; /* Aumentei um pouco o respiro para o mobile */
+  padding: 30px 20px 20px;
   margin-top: 0px;
   width: 100%;
   box-sizing: border-box;
@@ -17,11 +16,11 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 20px; /* Garante que os blocos não grudem */
+  gap: 20px;
 }
 
 .footer-brand, .footer-links, .footer-contact {
-  flex: 1; /* Mudei para 1 para dividir melhor o espaço */
+  flex: 1;
 }
 
 .footer-brand h2 {
@@ -30,7 +29,7 @@
 }
 
 .footer-brand h2 span {
-  color: #2563eb; /* Azul padrão do AgendaBot */
+  color: #2563eb;
 }
 
 .footer-brand p {
@@ -84,23 +83,22 @@
   font-size: 0.75rem;
 }
 
-/* --- ONDE ESTAVA O ERRO: AJUSTE MOBILE --- */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
-    align-items: center;    /* CENTRALIZA os blocos no eixo X */
-    text-align: center;     /* CENTRALIZA os textos */
-    gap: 30px;              /* Espaço entre as seções no mobile */
+    align-items: center;
+    text-align: center;
+    gap: 30px;
   }
 
   .footer-brand p {
-    margin: 0 auto;         /* Centraliza o parágrafo da marca */
+    margin: 0 auto;
   }
 
   .footer-links ul {
     display: flex;
     flex-direction: column;
-    align-items: center;    /* CENTRALIZA os links da lista */
+    align-items: center;
   }
 
   .footer-contact {

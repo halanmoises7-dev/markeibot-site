@@ -1,10 +1,9 @@
-import './styles.css';
+import './Cards.css';
 
 const FeatureCard = ({ image, title, description }) => {
   return (
     <div className="feature-card">
       <div className="icon-wrapper">
-        {/* Renderiza a imagem passando o caminho que vem do CardsSection */}
         <img 
           src={image} 
           alt={`Ilustração para ${title}`} 

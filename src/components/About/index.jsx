@@ -1,11 +1,10 @@
-import './styles.css';
+import './About.css';
 
 const About = () => {
   return (
     <section id="sobre" className="about-section">
       <div className="about-container">
         <div className="about-image">
-          {/* AJUSTE DA IMAGEM MOCKUP*/}
           <div className="image-placeholder" style={{ 
             width: '100%', 
             height: '100%', 

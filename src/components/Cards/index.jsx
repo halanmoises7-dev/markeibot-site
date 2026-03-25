@@ -1,12 +1,11 @@
 import FeatureCard from './FeatureCard';
-import './styles.css';
+import './Cards.css';
 
 const CardsSection = () => {
   const cardData = [
     {
       title: "Agendamento Online",
       description: "Seu cliente escolhe o melhor horário diretamente pelo bot, sem complicação.",
-      // Substitua os nomes abaixo pelos nomes exatos dos arquivos que você colocou na pasta public
       image: "/AgendamentoOnline.png" 
     },
     {
@@ -29,7 +28,7 @@ const CardsSection = () => {
           {cardData.map((card, index) => (
             <FeatureCard 
               key={index}
-              image={card.image} // Alterado de 'icon' para 'image'
+              image={card.image}
               title={card.title}
               description={card.description}
             />
