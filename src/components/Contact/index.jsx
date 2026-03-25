@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Contact.css'; // Importação do arquivo de estilos
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -22,41 +23,21 @@ const Contact = () => {
   };
 
   return (
-    <section id="contato" style={{ 
-      padding: '60px 20px',
-      backgroundColor: '#f8fafc', 
-      textAlign: 'center',
-      borderTop: '1px solid #e2e8f0'
-    }}>
-      <div style={{ maxWidth: '500px', margin: '0 auto', textAlign: 'left' }}>
-        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-          <h2 style={{ 
-            fontSize: '1.5rem',
-            color: '#1e293b', 
-            marginBottom: '8px',
-            fontWeight: '700' 
-          }}>
+    <section id="contato" className="contact-section">
+      <div className="contact-container">
+        <div className="contact-header">
+          <h2 className="contact-title">
             Quer o AgendaBot no seu negócio?
           </h2>
-          <p style={{ 
-            color: '#64748b', 
-            fontSize: '0.95rem', 
-            lineHeight: '1.4' 
-          }}>
+          <p className="contact-subtitle">
             Preencha os dados abaixo e fale diretamente com nosso suporte.
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} style={{ 
-          backgroundColor: '#ffffff', 
-          padding: '24px', 
-          borderRadius: '16px', 
-          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
-          border: '1px solid #e2e8f0'
-        }}>
+        <form onSubmit={handleSubmit} className="contact-form">
           
-          <div style={{ marginBottom: '16px' }}>
-            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 'bold', color: '#475569', marginBottom: '8px' }}>
+          <div className="form-group">
+            <label className="form-label">
               Seu Nome
             </label>
             <input 
@@ -66,21 +47,12 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               placeholder="Ex: Halan Moisés"
-              style={{
-                width: '100%',
-                padding: '12px',
-                borderRadius: '8px',
-                border: '1px solid #cbd5e1',
-                fontSize: '0.95rem',
-                color: '#1e293b',
-                boxSizing: 'border-box',
-                outline: 'none'
-              }}
+              className="form-input"
             />
           </div>
 
-          <div style={{ marginBottom: '16px' }}>
-            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 'bold', color: '#475569', marginBottom: '8px' }}>
+          <div className="form-group">
+            <label className="form-label">
               Nome do seu Negócio
             </label>
             <input 
@@ -90,21 +62,12 @@ const Contact = () => {
               value={formData.business}
               onChange={handleChange}
               placeholder="Ex: Barbearia do Centro"
-              style={{
-                width: '100%',
-                padding: '12px',
-                borderRadius: '8px',
-                border: '1px solid #cbd5e1',
-                fontSize: '0.95rem',
-                color: '#1e293b',
-                boxSizing: 'border-box',
-                outline: 'none'
-              }}
+              className="form-input"
             />
           </div>
 
-          <div style={{ marginBottom: '24px' }}>
-            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 'bold', color: '#475569', marginBottom: '8px' }}>
+          <div className="form-group-last">
+            <label className="form-label">
               Como podemos ajudar?
             </label>
             <textarea 
@@ -114,41 +77,12 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="Digite sua dúvida ou necessidade..."
               rows="4"
-              style={{
-                width: '100%',
-                padding: '12px',
-                borderRadius: '8px',
-                border: '1px solid #cbd5e1',
-                fontSize: '0.95rem',
-                color: '#1e293b',
-                boxSizing: 'border-box',
-                outline: 'none',
-                resize: 'vertical'
-              }}
+              className="form-input form-textarea"
             />
           </div>
 
-          <button 
-            type="submit"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '8px',
-              width: '100%',
-              padding: '16px',
-              backgroundColor: '#475569', 
-              color: '#fff', 
-              border: 'none',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              fontWeight: 'bold',
-              fontSize: '1rem',
-              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-              transition: 'background-color 0.2s'
-            }}
-          >
-            <span style={{ fontSize: '1.2rem' }}>💬</span> Enviar para o WhatsApp
+          <button type="submit" className="submit-button">
+            <span className="button-icon">💬</span> Enviar para o WhatsApp
           </button>
         </form>
       </div>

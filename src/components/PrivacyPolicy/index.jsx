@@ -21,7 +21,6 @@ const PrivacyPolicy = () => {
         <h2>2. Coleta de Dados do Usuário</h2>
         <p>Coletamos informações básicas de contato do <strong>Lojista/Parceiro</strong> (nome, e-mail e WhatsApp) apenas para fins de gestão de conta, suporte técnico e cobrança.</p>
 
-        {/* SEÇÃO ADICIONADA: O SEU DIFERENCIAL */}
         <h2>3. Proteção de Dados de Terceiros (Seus Clientes)</h2>
         <p>
           O <strong>AgendaBot</strong> atua exclusivamente como uma ponte tecnológica de automação. 

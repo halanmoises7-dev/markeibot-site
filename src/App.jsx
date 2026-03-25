@@ -3,10 +3,10 @@ import Header from './components/Header';
 import Main from './components/Main';
 import About from './components/About';
 import CardsSection from './components/Cards';
-import Pricing from './components/Main/Pricing';
-import Contact from './components/Contact/index';
+import Pricing from './components/Pricing';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
-import PrivacyPolicy from './components/PrivacyPolicy/index';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import './index.css';
 
 const Home = () => (
