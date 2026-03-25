@@ -16,7 +16,7 @@ O **AgendaBot** é um Micro-SaaS focado em automação de agendamentos para pequ
 
 ---
 
-Tecnologias e Ferramentas
+## Tecnologias e Ferramentas
 
 - **[React](https://reactjs.org/)** - Biblioteca principal.
 - **[Vite](https://vitejs.dev/)** - Build tool de próxima geração.
@@ -43,7 +43,9 @@ src/
  │    └── Footer/        # Rodapé e links legais
  ├── App.jsx             # Orquestrador de componentes e rotas
  └── index.css           # Estilos globais e variáveis de cor
+ ```
 
+---
 
 ## Desenvolvedor
 Halan Moisés - Mídia & Web
@@ -52,6 +54,7 @@ Profissional Multi-hyphenate: Designer, Web Dev e Fotógrafo.
 
 Rio de Janeiro, Brasil.
 
+---
 
 ## Licença
 Este projeto é de uso exclusivo para o Micro-SaaS AgendaBot.
