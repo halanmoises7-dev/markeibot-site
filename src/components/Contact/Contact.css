@@ -19,10 +19,10 @@
 }
 
 .contact-title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #1e293b;
   margin-bottom: 8px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .contact-subtitle {
@@ -64,17 +64,24 @@
   color: #1e293b;
   box-sizing: border-box;
   outline: none;
-  transition: border-color 0.2s;
+  transition: all 0.2s ease;
 }
 
 .form-input:focus {
   border-color: #475569;
+  box-shadow: 0 0 0 3px rgba(71, 85, 105, 0.1);
+}
+
+.form-select {
+  cursor: pointer;
+  background-color: #fff;
 }
 
 .form-textarea {
   resize: vertical;
 }
 
+/* Estilo Base do Botão */
 .submit-button {
   display: flex;
   align-items: center;
@@ -82,7 +89,6 @@
   gap: 8px;
   width: 100%;
   padding: 16px;
-  background-color: #475569;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -90,15 +96,31 @@
   font-weight: bold;
   font-size: 1rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.2s, transform 0.1s;
-}
-
-.submit-button:hover {
-  background-color: #334155;
+  transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
 }
 
 .submit-button:active {
   transform: scale(0.98);
+}
+
+/* Variação WhatsApp */
+.btn-whatsapp {
+  background-color: #25bb5c;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1a9b49;
+  box-shadow: 0 6px 12px -2px rgba(37, 211, 102, 0.4);
+}
+
+/* Variação E-mail */
+.btn-email {
+  background-color: #007bff;
+}
+
+.btn-email:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 12px -2px rgba(0, 123, 255, 0.4);
 }
 
 .button-icon {
