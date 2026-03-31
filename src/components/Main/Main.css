@@ -1,67 +1,142 @@
 .main-hero {
-  padding: 80px 20px;
-  text-align: center;
-  background-color: #f0f4f8;
-  min-height: calc(100vh - 80px);
+  padding: 0 5%;
+  background-color: #ffffff;
+  /* Ocupa exatamente a altura da tela, descontando o Header se houver */
+  height: 100vh; 
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evita rolagem desnecessária nesta seção */
+}
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
   align-items: center;
 }
 
+/* TEXTOS MAIS COMPACTOS PARA CABER NA TELA */
 .main-title {
-  font-size: 3rem;
-  color: #0f172a;
-  margin-bottom: 20px;
+  font-size: clamp(2.5rem, 4vw, 3.5rem); /* Tamanho responsivo */
+  font-weight: 900;
+  line-height: 1.1;
+  color: #1a202c;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
 }
 
 .main-title-highlight {
-  color: #2563eb;
+  color: #007bff;
 }
 
 .main-description {
-  font-size: 1.2rem;
-  color: #4b5563;
-  max-width: 700px;
-  margin: 0 auto 30px;
-}
-
-.main-description strong {
-  color: #0f172a;
-}
-
-.cta-button {
-  text-decoration: none;
-  display: inline-block;
-  padding: 15px 35px;
-  background-color: #2563eb;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
   font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  color: #4a5568;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  max-width: 480px;
 }
 
-.cta-button:hover {
-  transform: scale(1.05);
-  background-color: #1d4ed8;
-  box-shadow: 0 6px 20px 0 rgba(37, 99, 235, 0.5);
+.hero-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-.cta-button:active {
-  transform: scale(0.98);
+.cta-button-main {
+  background-color: #007bff;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.2);
+  white-space: nowrap;
 }
 
-/* Ajuste responsivo para telas menores */
-@media (max-width: 768px) {
-  .main-title {
-    font-size: 2.2rem;
+.secondary-button-main {
+  border: 2px solid #007bff;
+  color: #007bff;
+  padding: 14px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.cta-button-main:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.hero-subtext {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* LADO DIREITO - CARDS */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-badge-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Um em cima do outro no visual da direita */
+  gap: 15px;
+}
+
+.stats-card {
+  background: white;
+  padding: 20px 40px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+  border: 1px solid #f1f5f9;
+  text-align: center;
+}
+
+.stats-number {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #007bff;
+}
+
+.stats-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* RESPONSIVIDADE PARA CELULAR */
+@media (max-width: 850px) {
+  .main-hero {
+    height: auto;
+    padding: 100px 5% 60px;
   }
-  
-  .main-description {
-    font-size: 1.1rem;
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-badge-container {
+    grid-template-columns: 1fr 1fr; /* No mobile ficam lado a lado */
+    margin-top: 30px;
   }
 }

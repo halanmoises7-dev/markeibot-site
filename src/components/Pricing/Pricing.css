@@ -1,29 +1,32 @@
 .pricing-section {
-  padding: 40px 20px;
+  padding: 20px 20px; /* Reduzido de 40px para 20px */
   background-color: #ffffff;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh; /* Força a seção a ocupar a tela inteira */
+  justify-content: center; /* Centraliza verticalmente o conteúdo */
+  box-sizing: border-box;
 }
 
 .pricing-header {
   max-width: 600px;
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* Reduzido de 30px para 20px */
 }
 
 .pricing-title {
-  font-size: 1.8rem;
+  font-size: 1.6rem; /* Reduzido levemente de 1.8rem */
   color: #0f172a;
   font-weight: 900;
-  margin-bottom: 8px;
+  margin-bottom: 4px; /* Reduzido de 8px para 4px */
   text-transform: uppercase;
   font-style: italic;
 }
 
 .pricing-subtitle {
   color: #64748b;
-  font-size: 0.9rem;
+  font-size: 0.85rem; /* Reduzido de 0.9rem */
   font-weight: 600;
 }
 
@@ -32,24 +35,25 @@
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
-  gap: 20px;
+  gap: 15px; /* Reduzido de 20px para 15px */
   width: 100%;
-  max-width: 700px;
-  flex-wrap: wrap;
+  max-width: 800px; /* Aumentado para os cards ficarem mais largos e menos altos */
+  flex-wrap: nowrap; /* Evita quebra de linha em telas médias */
 }
 
 .pricing-card {
   flex: 1;
-  max-width: 280px;
-  min-width: 260px;
-  padding: 25px 20px;
-  border-radius: 24px;
+  max-width: 300px;
+  min-width: 250px;
+  padding: 20px 15px; /* Reduzido de 25px para 20px */
+  border-radius: 20px; /* Reduzido de 24px para 20px */
   background-color: #ffffff;
   border: 2px solid #f1f5f9;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
+  justify-content: space-between; /* Garante que o botão fique sempre no final */
 }
 
 .pricing-card:hover {
@@ -60,36 +64,36 @@
 .pricing-badge {
   background-color: #2563eb;
   color: #ffffff;
-  padding: 4px 12px;
+  padding: 3px 10px; /* Reduzido */
   border-radius: 100px;
-  font-size: 0.65rem;
+  font-size: 0.6rem; /* Reduzido de 0.65rem */
   font-weight: 900;
   display: inline-block;
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Reduzido de 15px */
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .price-container {
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Reduzido de 20px */
 }
 
 .currency {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 800;
   color: #0f172a;
   vertical-align: super;
 }
 
 .price-value {
-  font-size: 3rem;
+  font-size: 2.5rem; /* Reduzido de 3rem para economizar espaço vertical */
   font-weight: 900;
   color: #0f172a;
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
 }
 
 .price-period {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #64748b;
   font-weight: 600;
 }
@@ -98,17 +102,16 @@
   list-style: none;
   padding: 0;
   text-align: left;
-  margin-bottom: 25px;
+  margin-bottom: 15px; /* Reduzido de 25px */
   color: #475569;
-  font-size: 0.85rem;
-  flex-grow: 1;
+  font-size: 0.8rem; /* Reduzido de 0.85rem */
 }
 
 .benefit-item {
-  margin-bottom: 10px;
+  margin-bottom: 6px; /* Reduzido de 10px para compactar a lista */
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-weight: 600;
 }
 
@@ -121,11 +124,11 @@
   display: block;
   background-color: #0f172a;
   color: #ffffff;
-  padding: 12px;
-  border-radius: 12px;
+  padding: 10px; /* Reduzido de 12px */
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 900;
-  font-size: 0.8rem;
+  font-size: 0.75rem; /* Reduzido de 0.8rem */
   text-align: center;
   text-transform: uppercase;
   transition: background 0.2s;
@@ -135,9 +138,19 @@
   background-color: #2563eb;
 }
 
+/* Ajuste para telas pequenas (Mobile) */
 @media (max-width: 640px) {
+  .pricing-section {
+    height: auto; /* No mobile é impossível caber tudo sem scroll, então voltamos ao normal */
+    padding: 40px 20px;
+  }
   .pricing-container {
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
+  }
+  .pricing-card {
+    max-width: 100%;
+    width: 100%;
   }
 }
