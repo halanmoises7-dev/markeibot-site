@@ -8,8 +8,8 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="planos" className="pricing-section">
-      <div className="pricing-header">
+    <section className="pricing-section">
+      <div className="pricing-header" id="planos">
         <h2 className="pricing-title">
           PLANOS <span style={{ color: '#2563eb' }}>AGENDABOT</span>
         </h2>
