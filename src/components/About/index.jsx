@@ -14,8 +14,8 @@ const About = () => {
             background: 'transparent'
           }}>
             <img 
-              src="/AgendaBot_Mockup.png" 
-              alt="Mockup do AgendaBot" 
+              src="/MarkeiBot_Mockup.png" 
+              alt="Mockup do MarkeiBot - Interface de agendamento" 
               style={{
                 width: '100%',
                 height: '100%',
@@ -30,16 +30,16 @@ const About = () => {
           <span className="subtitle">Conheça o Chatbot</span>
           <h2>Atendimento inteligente que <span>trabalha por você.</span></h2>
           <p>
-            O AgendarBot não é apenas um chat automático. Ele entende a necessidade do seu cliente, 
-            consulta sua disponibilidade em tempo real e finaliza o agendamento sem que você 
-            precise parar o que está fazendo.
+            O <strong>MarkeiBot</strong> não é apenas um chat automático. Ele entende a necessidade do seu cliente, 
+            consulta sua disponibilidade em tempo real e finaliza o agendamento em segundos. 
+            É a tecnologia que garante: tá agendado, tá resolvido.
           </p>
           
           <div className="about-footer-wrapper">
             <ul className="about-list">
-              <li>✅ Integração direta com WhatsApp</li>
-              <li>✅ Sem necessidade de instalação para o cliente</li>
-              <li>✅ Painel de controle simples e intuitivo</li>
+              <li>✅ Automação de agenda via WhatsApp</li>
+              <li>✅ Sincronização em tempo real</li>
+              <li>✅ Painel administrativo completo para você</li>
             </ul>
 
             <a href="#planos" className="btn-ver-preco">

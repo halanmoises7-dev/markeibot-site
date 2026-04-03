@@ -11,7 +11,7 @@ const Pricing = () => {
     <section className="pricing-section">
       <div className="pricing-header" id="planos">
         <h2 className="pricing-title">
-          PLANOS <span style={{ color: '#2563eb' }}>AGENDABOT</span>
+          PLANOS <span style={{ color: '#2563eb' }}>MARKEIBOT</span>
         </h2>
         <p className="pricing-subtitle">
           Escolha a solução ideal para sua demanda.
@@ -45,8 +45,9 @@ const Pricing = () => {
           </ul>
 
           <a 
-            href="https://wa.me/5521965870535?text=Olá!%20Quero%20assinar%20o%20Plano%20Individual%20do%20AgendaBot."
+            href="https://wa.me/5521965870535?text=Olá!%20Quero%20assinar%20o%20Plano%20Individual%20do%20MarkeiBot."
             target="_blank"
+            rel="noopener noreferrer"
             className="pricing-button"
           >
             Assinar Agora
@@ -78,8 +79,9 @@ const Pricing = () => {
           </ul>
 
           <a 
-            href="https://wa.me/5521965870535?text=Olá!%20Quero%20assinar%20o%20Plano%20Duplo%20do%20AgendaBot."
+            href="https://wa.me/5521965870535?text=Olá!%20Quero%20assinar%20o%20Plano%20Duplo%20do%20MarkeiBot."
             target="_blank"
+            rel="noopener noreferrer"
             className="pricing-button"
           >
             Assinar Agora

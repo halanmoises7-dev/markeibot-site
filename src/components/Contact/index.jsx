@@ -17,16 +17,18 @@ const Contact = () => {
     e.preventDefault();
     
     const { name, business, message, sendMethod } = formData;
-    const subject = "Dúvida sobre o AgendaBot";
-    const bodyText = `Olá! Tenho uma dúvida sobre o AgendaBot.\n\n*Nome:* ${name}\n*Negócio:* ${business}\n*Mensagem:* ${message}`;
+    
+    // Assunto e corpo da mensagem atualizados para MarkeiBot
+    const subject = "Dúvida sobre o MarkeiBot";
+    const bodyText = `Olá! Tenho uma dúvida sobre o MarkeiBot.\n\n*Nome:* ${name}\n*Negócio:* ${business}\n*Mensagem:* ${message}`;
 
     if (sendMethod === 'whatsapp') {
       const encodedText = window.encodeURIComponent(bodyText);
-    
+      // Mantendo seu número de contato
       window.open(`https://wa.me/5521965870535?text=${encodedText}`, '_blank');
     } else {
-      
-      const mailtoLink = `mailto:agendabot.br@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+      // E-mail atualizado para a nova marca
+      const mailtoLink = `mailto:markeibot.br@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
       window.location.href = mailtoLink;
     }
   };

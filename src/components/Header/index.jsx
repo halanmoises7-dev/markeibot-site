@@ -13,7 +13,7 @@ const Header = () => {
         <div className="logo">
           <h1>
             <a href="#inicio">
-              AGENDA<span>BOT</span>
+              MARKEI<span>BOT</span>
             </a>
           </h1>
         </div>
@@ -38,7 +38,7 @@ const Header = () => {
             <li><a href="#contato" onClick={closeMenu}>Contato</a></li>
             <li>
               <a 
-                href="https://agendabot-web.vercel.app/" 
+                href="https://markeibot-web.vercel.app/" 
                 className="client-area"
                 target="_blank" 
                 rel="noopener noreferrer" 

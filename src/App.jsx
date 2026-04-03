@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import './index.css';
 
+// Componente da Home com todas as seções
 const Home = () => (
   <>
     <Header />
@@ -20,22 +21,19 @@ const Home = () => (
   </>
 );
 
-const PoliticaPrivacidade = () => (
-  <div style={{ padding: '100px 20px', textAlign: 'center', minHeight: '80vh' }}>
-    <h1>Política de Privacidade</h1>
-    <p style={{ margin: '20px 0', color: '#666' }}>Conteúdo da sua política aqui...</p>
-    <a href="/" style={{ color: '#2563eb', fontWeight: 'bold' }}>Voltar para Início</a>
-  </div>
-);
-
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
+          {/* Rota Principal */}
           <Route path="/" element={<Home />} />
+          
+          {/* Rota da Política de Privacidade (usando o seu componente importado) */}
           <Route path="/politica" element={<PrivacyPolicy />} />
         </Routes>
+        
+        {/* O Footer aparece em todas as páginas */}
         <Footer />
       </div>
     </Router>

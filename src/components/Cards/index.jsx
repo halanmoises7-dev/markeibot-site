@@ -5,17 +5,17 @@ const CardsSection = () => {
   const cardData = [
     {
       title: "Agendamento Online",
-      description: "Seu cliente escolhe o melhor horário diretamente pelo bot, sem complicação.",
+      description: "Seu cliente escolhe o melhor horário diretamente pelo bot. Sem esperas, sem complicação.",
       image: "/AgendamentoOnline.png" 
     },
     {
       title: "Gestão de Horários",
-      description: "Controle total da sua agenda em um só lugar, evitando marcações duplicadas.",
+      description: "Controle total da sua agenda em um só lugar. O MarkeiBot evita marcações duplicadas automaticamente.",
       image: "/GestaodeHorarios.png"
     },
     {
       title: "Atendimento 24/7",
-      description: "Responda dúvidas e realize agendamentos em tempo real, mesmo fora do seu horário comercial.",
+      description: "Sempre ativo. Realize agendamentos e tire dúvidas em tempo real, mesmo fora do horário comercial.",
       image: "/Atendimento.png"
     }
   ];
@@ -23,7 +23,9 @@ const CardsSection = () => {
   return (
     <section id="recursos" className="cards-container">
       <div className="content-limit">
-        <h2 className="title-section">Recursos do AgendaBot</h2>
+        {/* Título atualizado para a nova marca */}
+        <h2 className="title-section">Recursos do MarkeiBot</h2>
+        
         <div className="cards-grid">
           {cardData.map((card, index) => (
             <FeatureCard 

@@ -9,7 +9,9 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-brand">
-            <h2>AGENDA<span>BOT</span></h2>
+            {/* Mantendo o estilo de texto simples conforme o seu Header */}
+            <h2>MARKEI<span>BOT</span></h2>
+            <p className="footer-slogan">"Tá agendado, tá resolvido."</p>
             <p>Sua agenda inteligente no WhatsApp, funcionando 24h por dia para o seu negócio.</p>
           </div>
 
@@ -25,7 +27,7 @@ const Footer = () => {
 
           <div className="footer-contact">
             <h4>Contato</h4>
-            <p>agendabot.br@gmail.com</p>
+            <p>markeibot.br@gmail.com</p>
           </div>
         </div>
 
