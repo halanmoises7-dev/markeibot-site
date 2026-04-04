@@ -1,7 +1,6 @@
 .main-hero {
   padding: 0 5%;
   background-color: #ffffff;
-  /* Ocupa exatamente a altura da tela, descontando o Header */
   height: 100vh; 
   display: flex;
   justify-content: center;
@@ -18,28 +17,20 @@
   align-items: center;
 }
 
-/* TÍTULO PRINCIPAL - MARKEIBOT */
-.main-title {
-  font-size: clamp(3rem, 6vw, 4.5rem);
-  font-weight: 950;
-  line-height: 1;
-  color: #0f172a; 
-  margin-bottom: 8px;
-  letter-spacing: -2px;
+/* CONTAINER DA LOGO */
+.hero-logo-wrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: -8px; 
+  margin-top: 100px
 }
 
-/* O 'BOT' EM AZUL */
-.main-title-highlight {
-  color: #007bff;
-}
-
-/* SLOGAN - MENOR QUE O NOME */
-.main-slogan {
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
-  font-weight: 600;
-  color: #64748b; 
-  margin-bottom: 24px;
-  letter-spacing: -0.5px;
+.main-hero-logo {
+  height: 105px; 
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.05));
 }
 
 .main-description {
@@ -48,6 +39,7 @@
   line-height: 1.6;
   margin-bottom: 35px;
   max-width: 480px;
+  text-align: left;
 }
 
 .hero-actions {
@@ -66,7 +58,6 @@
   font-weight: 800;
   transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 10px 25px rgba(0, 123, 255, 0.25);
-  white-space: nowrap;
 }
 
 .secondary-button-main {
@@ -77,7 +68,6 @@
   text-decoration: none;
   font-weight: 800;
   transition: 0.3s;
-  white-space: nowrap;
 }
 
 .cta-button-main:hover {
@@ -86,18 +76,13 @@
   box-shadow: 0 15px 30px rgba(0, 123, 255, 0.35);
 }
 
-.secondary-button-main:hover {
-  background-color: #f8fafc;
-  border-color: #cbd5e1;
-}
-
 .hero-subtext {
   font-size: 0.9rem;
   color: #94a3b8;
   font-weight: 600;
 }
 
-/* LADO DIREITO - CARDS (AJUSTADO PARA 2x2) */
+/* LADO DIREITO - CARDS */
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -105,30 +90,23 @@
 
 .hero-badge-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Agora em duas colunas no desktop */
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
 .stats-card {
   background: white;
-  padding: 30px 25px; /* Padding levemente ajustado para o grid */
+  padding: 30px 25px;
   border-radius: 24px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.08);
   border: 1px solid #f1f5f9;
   text-align: center;
   transition: all 0.3s ease;
-  min-width: 160px; /* Garante que os cards não fiquem muito estreitos */
-}
-
-.stats-card:hover {
-  transform: translateY(-5px) scale(1.03);
-  border-color: #007bff;
-  box-shadow: 0 25px 60px rgba(0, 123, 255, 0.12);
 }
 
 .stats-number {
   display: block;
-  font-size: 2.2rem; /* Levemente menor para caber melhor no grid 2x2 */
+  font-size: 2.2rem;
   font-weight: 900;
   color: #007bff;
   line-height: 1;
@@ -140,16 +118,20 @@
   color: #64748b;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  line-height: 1.2;
 }
 
-/* RESPONSIVIDADE PARA CELULAR */
+/* RESPONSIVIDADE DESKTOP */
+@media (min-width: 851px) {
+  .main-hero-logo {
+    height: 135px;
+  }
+}
+
+/* RESPONSIVIDADE MOBILE */
 @media (max-width: 850px) {
   .main-hero {
     height: auto;
     padding: 120px 5% 80px;
-    overflow: visible;
   }
   .hero-container {
     grid-template-columns: 1fr;
@@ -160,7 +142,12 @@
     flex-direction: column;
     align-items: center;
   }
+  .hero-logo-wrapper {
+    justify-content: center;
+    margin-left: 0;
+  }
   .main-description {
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
   }
@@ -169,16 +156,7 @@
     width: 100%;
     max-width: 300px;
   }
-  .hero-badge-container {
-    grid-template-columns: 1fr 1fr; /* Mantém 2 colunas no mobile para não ficar infinito */
-    margin-top: 40px;
-    gap: 15px;
-  }
-  .stats-card {
-    padding: 20px 10px;
-    min-width: unset;
-  }
-  .stats-number {
-    font-size: 1.6rem;
+  .main-hero-logo {
+    height: 85px;
   }
 }

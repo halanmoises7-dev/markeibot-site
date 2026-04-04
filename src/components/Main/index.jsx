@@ -5,18 +5,17 @@ const Main = () => {
     <section id="inicio" className="main-hero">
       <div className="hero-container">
         
-        {/* LADO ESQUERDO: HIERARQUIA VISUAL CORRETA */}
+        {/* LADO ESQUERDO */}
         <div className="hero-text-content">
-          {/* Título Principal (H1) apenas com o nome da marca */}
-          <h1 className="main-title">
-            Markei<span className="main-title-highlight">Bot</span>
-          </h1>
-
-          {/* Slogan (H2) agindo como subtítulo de apoio */}
-          <h2 className="main-slogan">
-            Tá agendado, tá resolvido.
-          </h2>
           
+          <div className="hero-logo-wrapper">
+            <img 
+              src="/MarkeiBot-Logo.png" 
+              alt="MarkeiBot - Tá agendado, tá resolvido" 
+              className="main-hero-logo"
+            />
+          </div>
+
           <p className="main-description">
             Pare de perder horas respondendo mensagens no WhatsApp. 
             Transforme seu número em uma <strong>máquina de agendamentos</strong> que funciona 24h por dia para o seu negócio.
@@ -36,7 +35,7 @@ const Main = () => {
           </p>
         </div>
 
-        {/* LADO DIREITO: CARDS DE IMPACTO (AGORA COM 4) */}
+        {/* LADO DIREITO: CARDS */}
         <div className="hero-visual">
           <div className="hero-badge-container">
             <div className="stats-card">
