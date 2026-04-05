@@ -1,58 +1,78 @@
-/* 1. CONFIGURAÇÃO DE ROLAGEM ISOLADA */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 10px; 
+:root {
+  --header-h: 80px;
+  --hero-top-gap: 40px;
 }
 
-/* 2. RESET RESTRITO AO HERO */
-.main-hero, 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* RESET RESTRITO EXCLUSIVO AO HERO */
+.main-hero,
 .main-hero * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 3. ESTRUTURA PRINCIPAL DO HERO */
+/* ===========================
+   ESTRUTURA PRINCIPAL DO HERO
+   =========================== */
 .main-hero {
   background-color: #ffffff;
-  
-  padding: 100px 5% 80px !important; 
-  
+  padding: max(120px, calc(var(--header-h) + var(--hero-top-gap))) 5% 80px;
+  overflow: auto;
+  border-top: 1px solid transparent;
+  scroll-margin-top: calc(var(--header-h) + 8px);
   display: flex;
   justify-content: center;
   position: relative;
-  overflow: hidden;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  font-family: inherit;
 }
 
+.main-hero > *:first-child {
+  margin-top: 0;
+}
+
+/* CONTEÚDO INTERNO */
 .main-hero .hero-container {
   max-width: 1300px;
   width: 100%;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 60px;
-  align-items: center; 
+  align-items: center;
 }
 
-/* 4. CONTEÚDO ESQUERDO */
+/* CONTEÚDO ESQUERDO */
 .main-hero .hero-text-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 }
 
 .main-hero .hero-logo-wrapper {
   margin-bottom: 1.5rem;
   display: flex;
-  margin-left: -7px; 
+  margin-left: -7px;
+  width: 100%;
 }
 
 .main-hero .main-hero-logo {
-  height: auto;
+  display: block;
+  width: 100%;
   max-width: 320px;
+  height: auto;
   object-fit: contain;
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.05));
-  margin-top: -10px; 
+  margin-top: -10px;
 }
 
 .main-hero .main-description {
@@ -60,11 +80,11 @@ html {
   color: #4a5568;
   line-height: 1.65;
   margin-bottom: 40px;
-  max-width: 520px; 
+  max-width: 520px;
   text-align: left;
 }
 
-/* 5. BOTÕES */
+/* BOTÕES */
 .main-hero .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -73,11 +93,11 @@ html {
 }
 
 .main-hero .cta-button-main {
-  background-color: #007bff !important;
-  color: #ffffff !important;
+  background-color: #007bff;
+  color: #ffffff;
   padding: 18px 40px;
   border-radius: 13px;
-  text-decoration: none !important;
+  text-decoration: none;
   font-size: 1.05rem;
   font-weight: 700;
   display: inline-block;
@@ -86,19 +106,19 @@ html {
 }
 
 .main-hero .secondary-button-main {
-  background-color: transparent !important;
-  border: 2px solid #e2e8f0 !important;
-  color: #1e293b !important;
+  background-color: transparent;
+  border: 2px solid #e2e8f0;
+  color: #1e293b;
   padding: 18px 40px;
   border-radius: 13px;
-  text-decoration: none !important;
+  text-decoration: none;
   font-size: 1.05rem;
   font-weight: 700;
   display: inline-block;
   transition: 0.3s ease;
 }
 
-.main-hero .cta-button-main:hover, 
+.main-hero .cta-button-main:hover,
 .main-hero .secondary-button-main:hover {
   transform: translateY(-4px);
 }
@@ -109,7 +129,7 @@ html {
   font-weight: 600;
 }
 
-/* 6. CARDS DE ESTATÍSTICAS */
+/* CARDS DE ESTATÍSTICAS */
 .main-hero .hero-badge-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -150,7 +170,7 @@ html {
 /* 7. RESPONSIVIDADE */
 @media (max-width: 850px) {
   .main-hero {
-    padding: 110px 5% 60px !important;
+    padding: max(110px, calc(var(--header-h) + 28px)) 5% 60px;
   }
 
   .main-hero .hero-container {
