@@ -5,7 +5,6 @@ import About from './components/About';
 import CardsSection from './components/Cards';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
-import AiAssistant from './components/AiAssistant';
 import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import './index.css';
@@ -17,7 +16,6 @@ const Home = () => (
     <About />
     <CardsSection />
     <Pricing />
-    <AiAssistant />
     <Contact />
   </>
 );
