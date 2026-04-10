@@ -3,126 +3,94 @@ import { Link } from 'react-router-dom';
 import './InstallPage.css';
 
 const InstallPage = () => {
-  const [deviceInfo, setDeviceInfo] = useState({
-    platform: 'unknown',
-    isInApp: false
-  });
+  const [device, setDevice] = useState({ platform: 'unknown', isInApp: false });
   const [deferredPrompt, setDeferredPrompt] = useState(null);
-  
-  // URL dinâmica para o QR Code (pega o endereço atual do site)
-  const siteURL = window.location.origin;
 
   useEffect(() => {
-    // Garante que a página comece sempre do topo
-    window.scrollTo(0, 0);
-    
     const ua = navigator.userAgent || navigator.vendor || window.opera;
     const isAndroid = /android/i.test(ua);
     const isIos = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
-    const isInAppBrowser = /FBAN|FBAV|Instagram|WhatsApp/i.test(ua);
+    const isInApp = /FBAN|FBAV|Instagram|WhatsApp/i.test(ua);
 
-    setDeviceInfo({
-      platform: isAndroid ? 'android' : isIos ? 'ios' : 'desktop',
-      isInApp: isInAppBrowser
-    });
+    setDevice({ platform: isAndroid ? 'android' : isIos ? 'ios' : 'desktop', isInApp });
 
-    const handleBeforeInstall = (e) => {
+    window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       setDeferredPrompt(e);
-    };
-
-    window.addEventListener('beforeinstallprompt', handleBeforeInstall);
-    return () => window.removeEventListener('beforeinstallprompt', handleBeforeInstall);
+    });
   }, []);
 
-  const triggerInstall = async () => {
+  const handleInstall = async () => {
     if (deferredPrompt) {
       deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
       if (outcome === 'accepted') setDeferredPrompt(null);
     } else {
-      alert("Para instalar agora, clique nos 3 pontos (⋮) no topo e depois em 'Instalar aplicativo'.");
+      alert("Para instalar, toque nos 3 pontos (⋮) do navegador e selecione 'Instalar aplicativo'.");
     }
   };
 
   return (
-    <div className="install-page-container">
-      <header className="install-page-header">
-        <h1>Instalar MarkeiBot</h1>
-        <p>Siga os passos para fixar o app na sua tela inicial.</p>
-      </header>
+    <div className="install-wrapper">
+      <div className="install-content">
+        <div className="install-header">
+          <div className="install-logo">MARKEI<span>BOT</span></div>
+          <h1>Instalar Aplicativo</h1>
+          <p>Siga as instruções abaixo para ter o MarkeiBot na sua tela inicial.</p>
+        </div>
 
-      <main className="install-page-main">
-        {deviceInfo.isInApp ? (
-          /* AVISO PARA QUEM ESTÁ NO WHATSAPP */
-          <div className="install-page-card warning">
-            <div className="card-header">⚠️ Saia do WhatsApp</div>
-            <p>O instalador não funciona dentro do navegador do WhatsApp.</p>
-            <ol className="steps-list">
-              <li>Toque nos <strong>três pontinhos (⋮)</strong> no topo da tela.</li>
-              <li>Escolha <strong>"Abrir no Chrome"</strong> ou no navegador padrão.</li>
-              <li>Depois, clique no botão de instalação que aparecerá aqui.</li>
+        {device.isInApp ? (
+          <div className="step-card warning">
+            <h3>⚠️ Atenção: Saia do WhatsApp</h3>
+            <p>O navegador do WhatsApp não permite instalações.</p>
+            <ol>
+              <li>Toque nos <strong>três pontos (⋮)</strong> no topo da tela.</li>
+              <li>Selecione <strong>"Abrir no Chrome"</strong> ou <strong>"Abrir no Safari"</strong>.</li>
             </ol>
           </div>
         ) : (
-          <>
-            {/* ANDROID */}
-            {deviceInfo.platform === 'android' && (
-              <div className="install-page-card">
-                <div className="card-header">🤖 Android</div>
-                <button className="install-page-btn" onClick={triggerInstall}>
-                  INSTALAR AGORA
+          <div className="step-card">
+            {device.platform === 'android' && (
+              <div className="android-flow">
+                <h3>Passo Único:</h3>
+                <p>Clique no botão abaixo para fixar o app no seu Android.</p>
+                <button className="pill-button" onClick={handleInstall}>
+                  <div className="pill-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  </div>
+                  <span>INSTALAR MARKEIBOT</span>
                 </button>
-                <p className="helper-text">
-                  Se o botão não funcionar, vá ao menu (⋮) e clique em <strong>"Instalar aplicativo"</strong>.
-                </p>
               </div>
             )}
 
-            {/* IPHONE */}
-            {deviceInfo.platform === 'ios' && (
-              <div className="install-page-card">
-                <div className="card-header">🍎 iPhone / iOS</div>
-                <ol className="steps-list">
-                  <li>Toque no ícone de <strong>Compartilhar</strong> (quadrado com seta).</li>
-                  <li>Escolha <strong>"Adicionar à Tela de Início"</strong>.</li>
-                  <li>Clique em <strong>"Adicionar"</strong>.</li>
+            {device.platform === 'ios' && (
+              <div className="ios-flow">
+                <h3>Passo a Passo (iPhone):</h3>
+                <ol>
+                  <li>Toque no ícone de <strong>Compartilhar</strong> (o quadrado com uma seta para cima).</li>
+                  <li>Role a lista e toque em <strong>"Adicionar à Tela de Início"</strong>.</li>
+                  <li>Toque em <strong>"Adicionar"</strong> no canto superior direito.</li>
                 </ol>
               </div>
             )}
 
-            {/* DESKTOP (MOSTRA QR CODE) */}
-            {deviceInfo.platform === 'desktop' && (
-              <div className="install-page-card" style={{ textAlign: 'center' }}>
-                <div className="card-header">💻 Computador</div>
-                <p>Escaneie o QR Code abaixo para instalar o aplicativo no seu celular.</p>
-                
-                <div style={{ background: '#fff', padding: '15px', display: 'inline-block', borderRadius: '12px', border: '1px solid #eee', margin: '15px 0' }}>
-                  <img 
-                    src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${siteURL}`} 
-                    alt="QR Code"
-                  />
-                </div>
-
-                <div style={{ marginTop: '10px' }}>
-                  <p className="helper-text">Ou acesse:</p>
-                  <code style={{ background: '#f1f3f4', padding: '5px 10px', borderRadius: '5px', color: '#1a73e8', fontWeight: 'bold' }}>
-                    {siteURL.replace('https://', '').replace('http://', '')}
-                  </code>
+            {device.platform === 'desktop' && (
+              <div className="desktop-flow">
+                <h3>Instalação no Celular:</h3>
+                <p>Aponte a câmera do seu smartphone para o código abaixo para instalar instantaneamente:</p>
+                <div className="qr-box">
+                  <img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${window.location.origin}`} alt="QR Code" />
                 </div>
               </div>
             )}
-          </>
+          </div>
         )}
-      </main>
 
-      <footer className="install-page-footer">
-        {/* DESTINO CORRETO: Volta para a Home do Site (Landing Page) */}
-        <Link to="/" className="back-link">
-          ← Voltar para o Início
-        </Link>
-        <p className="copyright">MARKEIBOT © 2026</p>
-      </footer>
+        <div className="install-footer">
+          <Link to="/" className="back-link">← VOLTAR PARA O SITE</Link>
+          <p>HALAN MOISÉS MÍDIA & WEB © 2026</p>
+        </div>
+      </div>
     </div>
   );
 };
