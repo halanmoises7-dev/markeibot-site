@@ -37,9 +37,9 @@ const About = () => {
           
           <div className="about-footer-wrapper">
             <ul className="about-list">
-              <li>✅ Automação de agenda via WhatsApp</li>
-              <li>✅ Sincronização em tempo real</li>
-              <li>✅ Painel administrativo completo para você</li>
+              <li>✅ Chatbot personalizável com agendamento automático</li>
+              <li>✅ App para gerenciar, reagendar e bloquear horários</li>
+              <li>✅ Link próprio e avisos de agendamento no seu Zap</li>
             </ul>
 
             <a href="#planos" className="btn-ver-preco">

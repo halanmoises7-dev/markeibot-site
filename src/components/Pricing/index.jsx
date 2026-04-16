@@ -2,9 +2,11 @@ import './Pricing.css';
 
 const Pricing = () => {
   const commonBenefits = [
-    'Atendimento 24h',
-    'Painel de controle',
-    'Suporte prioritário'
+    'Atendimento 24h no WhatsApp',
+    'App mobile para gestão',
+    'Suporte prioritário',
+    'Link próprio para bio',
+    'Reagendamento prático'
   ];
 
   return (
@@ -32,7 +34,7 @@ const Pricing = () => {
 
           <ul className="benefits-list">
             <li className="benefit-item">
-              <span className="check-icon">✓</span> <strong>1 Bot de Agenda</strong>
+              <span className="check-icon">✓</span> <strong>1 Bot de Agenda Personalizável</strong>
             </li>
             <li className="benefit-item">
               <span className="check-icon">✓</span> Agendamentos ilimitados
@@ -66,7 +68,7 @@ const Pricing = () => {
 
           <ul className="benefits-list">
             <li className="benefit-item">
-              <span className="check-icon">✓</span> <strong>2 Bots de Agenda</strong>
+              <span className="check-icon">✓</span> <strong>2 Bots de Agenda Personalizáveis</strong>
             </li>
             <li className="benefit-item">
               <span className="check-icon">✓</span> Agendamentos ilimitados
