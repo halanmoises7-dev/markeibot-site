@@ -16,6 +16,11 @@ const Main = () => {
             />
           </div>
 
+          {/* SELO DISCRETO DE TESTE */}
+          <div className="trial-badge animate-bounce-slow">
+            <span>✨ 15 Dias de Teste Grátis</span>
+          </div>
+
           <p className="main-description">
             Pare de perder horas respondendo mensagens no WhatsApp. 
             Transforme seu número em uma <strong>máquina de agendamentos</strong> que funciona 24h por dia para o seu negócio.
@@ -23,7 +28,7 @@ const Main = () => {
 
           <div className="hero-actions">
             <a href="#planos" className="cta-button-main">
-              Começar Agora
+              Começar Teste Agora
             </a>
             <a href="#planos" className="secondary-button-main">
               Ver Planos
@@ -31,11 +36,11 @@ const Main = () => {
           </div>
 
           <p className="hero-subtext">
-            🚀 Automação inteligente. Zero estresse.
+            🚀 <strong>TESTE SEM COMPROMISSO:</strong> Use todas as funções por 15 dias sem pagar nada.
           </p>
         </div>
 
-        {/* LADO DIREITO: CARDS */}
+        {/* LADO DIREITO: CARDS VOLTANDO AO NORMAL */}
         <div className="hero-visual">
           <div className="hero-badge-container">
             <div className="stats-card">

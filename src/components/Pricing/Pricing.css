@@ -1,3 +1,8 @@
+:root {
+  --header-h: 80px;
+  --hero-top-gap: 40px;
+}
+
 .pricing-section {
   padding: 40px 20px;
   background-color: #ffffff;
@@ -10,7 +15,7 @@
 .pricing-header {
   max-width: 600px;
   margin-bottom: 30px;
-  scroll-margin-top: 60px
+  scroll-margin-top: 60px;
 }
 
 .pricing-title {
@@ -54,7 +59,7 @@
 }
 
 .pricing-card:hover {
-  border-color: #2563eb;
+  border-color: #007bff; /* Azul do início */
   transform: translateY(-5px);
 }
 
@@ -71,8 +76,24 @@
   text-transform: uppercase;
 }
 
+/* DESTAQUE PARA O SELO DE TRIAL */
+.pricing-badge.trial-highlight {
+  background-color: #ffbf00;
+  color: #000;
+}
+
 .price-container {
   margin-bottom: 20px;
+}
+
+/* TEXTO DE APOIO ABAIXO DO PREÇO */
+.after-trial-text {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #94a3b8;
+  margin-top: 5px;
+  letter-spacing: 0.5px;
 }
 
 .currency {
@@ -114,26 +135,36 @@
 }
 
 .check-icon {
-  color: #2563eb;
+  color: #007bff; /* Azul do início */
   font-weight: 900;
 }
 
+/* BOTÃO COM TAMANHO ORIGINAL E COR AZUL */
 .pricing-button {
   display: block;
-  background-color: #0f172a;
+  background-color: #007bff; /* Mesmo azul do Hero */
   color: #ffffff;
-  padding: 12px;
-  border-radius: 12px;
+  padding: 12px; /* Mantido original */
+  border-radius: 12px; /* Mantido original */
   text-decoration: none;
   font-weight: 900;
-  font-size: 0.8rem;
+  font-size: 0.8rem; /* Mantido original */
   text-align: center;
   text-transform: uppercase;
-  transition: background 0.2s;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
 }
 
 .pricing-button:hover {
-  background-color: #2563eb;
+  background-color: #0056b3; /* Tom mais escuro para o hover */
+  transform: scale(1.02);
+}
+
+.trial-footer-note {
+  margin-top: 25px;
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 600;
 }
 
 @media (max-width: 640px) {
