@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import InstallPage from './components/InstallPage';
+import Roleta from './components/Roleta';
 import './index.css';
 
 const Home = () => (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/politica" element={<PrivacyPolicy />} />
           <Route path="/instalar" element={<InstallPage />} />
+          <Route path="/roleta" element={<Roleta />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />

@@ -1,0 +1,123 @@
+.roleta-page {
+    --cor-neon: #007bff;
+    --bg-cyber: #05070a;
+    --cor-glass: rgba(10, 14, 26, 0.85);
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-cyber);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    min-height: 100vh; color: white;
+    position: relative; overflow: hidden;
+}
+
+/* BOTÃO VOLTAR FIXO NO CANTO INFERIOR ESQUERDO */
+.botao-voltar-fixo {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: var(--cor-glass);
+    border: 1px solid rgba(0, 123, 255, 0.3);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    z-index: 999;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.botao-voltar-fixo:hover {
+    background: var(--cor-neon);
+    box-shadow: 0 0 15px var(--cor-neon);
+    border-color: white;
+}
+
+.seta-voltar {
+    font-size: 1.1rem;
+}
+
+.roleta-page .area-fundo {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
+    background: radial-gradient(circle at center, #0A0E1A 0%, #05070A 100%);
+    background-image: linear-gradient(rgba(0, 82, 255, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 82, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.roleta-page h1.titulo-neon { 
+    margin: 0 0 20px 0; font-size: 2.2rem; letter-spacing: 6px;
+    font-weight: 900; text-shadow: 0 0 15px var(--cor-neon), 0 0 30px var(--cor-neon); 
+    z-index: 1;
+}
+
+.roleta-page .titulo-neon .destaque { color: var(--cor-neon); font-weight: 900; }
+
+.roleta-page .layout { display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; align-items: center; z-index: 1; }
+
+.roleta-page .roleta-wrapper { position: relative; width: 400px; height: 400px; flex-shrink: 0; }
+
+.roleta-page .marcador {
+    position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
+    width: 0; height: 0; border-left: 18px solid transparent;
+    border-right: 18px solid transparent; border-top: 40px solid #FFFFFF;
+    z-index: 100; filter: drop-shadow(0 0 10px var(--cor-neon));
+}
+
+.roleta-page #canvasRoleta { 
+    width: 100% !important; height: 100% !important; border-radius: 50%; 
+    border: 6px solid var(--cor-neon); box-shadow: 0 0 30px rgba(0, 82, 255, 0.2);
+}
+
+.roleta-page .controles { 
+    background: var(--cor-glass); padding: 25px; border-radius: 20px; 
+    width: 350px; border: 1px solid rgba(0, 82, 255, 0.2);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.8);
+}
+
+.roleta-page .header-controles { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.roleta-page .header-controles h3 { margin: 0; font-size: 0.8rem; letter-spacing: 2px; color: var(--cor-neon); }
+
+.roleta-page .btn-mudo-neon { background: none; border: 1px solid #1e2533; color: white; border-radius: 6px; cursor: pointer; padding: 5px; }
+
+.roleta-page .editor-container {
+    display: flex; border: 1px solid #1e2533; border-radius: 10px;
+    height: 180px; background-color: #05070a; overflow: hidden; margin-bottom: 15px;
+}
+
+.roleta-page .numeracao-wrapper { background-color: rgba(0, 82, 255, 0.1); border-right: 1px solid #1e2533; }
+.roleta-page .numeracao { width: 40px; padding-top: 10px; text-align: center; font-size: 13px; line-height: 24px; color: var(--cor-neon); font-weight: bold; }
+
+.roleta-page textarea {
+    flex: 1; padding: 10px; border: none; outline: none; resize: none;
+    font-size: 14px; line-height: 24px; font-family: 'Consolas', monospace; 
+    background: transparent; color: #fff;
+}
+
+.roleta-page .container-cores { margin-bottom: 15px; }
+.roleta-page .label-cores { display: block; font-size: 0.65rem; letter-spacing: 1.5px; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+
+.roleta-page .seletor-cores { display: flex; align-items: center; justify-content: space-between; }
+.roleta-page .inputs-cor { display: flex; gap: 5px; }
+.roleta-page .seletor-cores input { border: none; width: 30px; height: 30px; cursor: pointer; border-radius: 5px; background: none; }
+
+.roleta-page .btn-reset-neon {
+    background: none; border: 1px solid #1e2533; color: #576574; border-radius: 6px;
+    font-size: 0.6rem; padding: 5px 6px; cursor: pointer; text-transform: uppercase;
+}
+
+.roleta-page button#btnGirar { 
+    width: 100%; padding: 16px; font-size: 1rem; font-weight: bold; 
+    cursor: pointer; border: 2px solid var(--cor-neon); border-radius: 10px; 
+    background: transparent; color: #fff; transition: 0.4s; letter-spacing: 2px;
+}
+.roleta-page button#btnGirar:hover { background: var(--cor-neon); box-shadow: 0 0 25px var(--cor-neon); }
+
+.roleta-page .resultado-container { margin-top: 15px; min-height: 50px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); border-radius: 10px; border: 1px solid rgba(0, 82, 255, 0.1); }
+.roleta-page #resultado { font-size: 1.2rem; font-weight: bold; color: #fff; text-shadow: 0 0 10px var(--cor-neon); }
+
+.roleta-page footer { margin-top: 25px; font-size: 0.7rem; color: #646568; z-index: 1; text-align: center; }

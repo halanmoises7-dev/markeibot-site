@@ -9,7 +9,6 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-brand">
-            {/* Mantendo o estilo de texto simples conforme o seu Header */}
             <h2>MARKEI<span>BOT</span></h2>
             <p className="footer-slogan">"Tá agendado, tá resolvido."</p>
             <p>Sua agenda inteligente no WhatsApp, funcionando 24h por dia para o seu negócio.</p>
@@ -21,8 +20,10 @@ const Footer = () => {
               <li><a href="#inicio">Início</a></li>
               <li><a href="#sobre">Sobre</a></li>
               <li><a href="#recursos">Recursos</a></li>
+              {/* NOVO LINK PARA A ROLETA */}
+              <li><Link to="/roleta" className="link-roleta">Roleta de Prêmios</Link></li>
               <li><Link to="/politica">Política de Privacidade</Link></li>
-              <li><Link to="/instalar" style={{ fontWeight: 'bold', color: '#007bff' }}>Instalar App</Link></li>
+              <li><Link to="/instalar" style={{ fontWeight: 'bold', color: '#2563eb' }}>Instalar App</Link></li>
             </ul>
           </div>
 

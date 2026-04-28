@@ -5,6 +5,8 @@
   margin-top: 0px;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+  z-index: 10;
 }
 
 .footer-container {
@@ -26,10 +28,11 @@
 .footer-brand h2 {
   font-size: 1.3rem;
   margin: 0 0 5px 0;
+  letter-spacing: 1px;
 }
 
 .footer-brand h2 span {
-  color: #2563eb;
+  color: #2563eb; /* Azul oficial MarkeiBot */
 }
 
 .footer-brand p {
@@ -40,11 +43,18 @@
   margin: 0;
 }
 
+.footer-slogan {
+  font-style: italic;
+  margin-bottom: 8px !important;
+  color: #bbb !important;
+}
+
 .footer-links h4, .footer-contact h4 {
   margin: 0 0 10px 0;
   font-size: 0.85rem;
   color: #fff;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .footer-links ul {
@@ -54,18 +64,25 @@
 }
 
 .footer-links li {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .footer-links a {
   color: #bbb;
   text-decoration: none;
   font-size: 0.85rem;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
   color: #2563eb;
+  padding-left: 5px;
+}
+
+/* Estilo específico para o link de instalação no footer */
+.link-install-app {
+  font-weight: bold;
+  color: #2563eb !important;
 }
 
 .footer-contact p {
@@ -83,6 +100,7 @@
   font-size: 0.75rem;
 }
 
+/* Responsividade para Tablets e Celulares */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
