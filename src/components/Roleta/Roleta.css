@@ -129,7 +129,7 @@
     /* Respiro no final para a barra inferior não cobrir o rodapé */
     .roleta-page {
         padding-top: 25px; /* Um pouco mais de espaço no topo da tela */
-        padding-bottom: 160px; 
+        padding-bottom: 0px; 
         justify-content: flex-start;
         width: 100%;
         overflow-x: hidden;
@@ -203,9 +203,15 @@
         font-size: 1rem; 
     }
 
+    /* NOVO: Ajuste fino no rodapé para eliminar a sobra */
+    .roleta-page footer {
+        margin-top: 25px;
+        margin-bottom: 20px; /* Mantém um pequeno respiro antes da barra do MarkeiBot */
+    }
+
     /* Botão flutuante de voltar */
     .botao-voltar-fixo {
-        bottom: 90px;
+        bottom: 20px;
         left: 15px;
         padding: 8px 12px;
         font-size: 0.65rem;
