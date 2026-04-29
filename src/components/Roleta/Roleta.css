@@ -126,56 +126,88 @@
    REGRAS EXCLUSIVAS PARA O MOBILE (CELULARES)
    ========================================= */
 @media (max-width: 768px) {
-    /* 1. Adiciona respiro no final da tela para a barra inferior não cobrir o rodapé */
+    /* Respiro no final para a barra inferior não cobrir o rodapé */
     .roleta-page {
-        padding-bottom: 100px;
-        padding-top: 20px;
-        justify-content: flex-start; /* Muda o alinhamento para permitir rolagem se a tela for muito pequena */
+        padding-top: 25px; /* Um pouco mais de espaço no topo da tela */
+        padding-bottom: 160px; 
+        justify-content: flex-start;
+        width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
     }
 
-    /* 2. Diminui o título para caber na tela e centraliza */
+    /* Título com respiro para a roleta */
     .roleta-page h1.titulo-neon {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         text-align: center;
-        letter-spacing: 4px;
-        margin-bottom: 10px;
+        width: 100%;
+        letter-spacing: 3px;
+        margin-bottom: 35px; /* MAIS ESPAÇO: Afasta o título da roleta */
     }
 
-    /* 3. Força a roleta e os controles a ficarem um embaixo do outro no celular */
+    /* Container principal - Afasta a roleta da caixa preta */
     .roleta-page .layout {
         flex-direction: column;
-        gap: 20px;
-        padding: 0 15px; /* Evita que encostem nas bordas da tela */
+        gap: 35px; /* MAIS ESPAÇO: Distância entre a roleta e a caixa preta */
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+        margin: 0;
     }
 
-    /* 4. "Espreme" a Roleta mantendo o formato redondo */
+    /* Roleta centralizada */
     .roleta-page .roleta-wrapper {
         width: 100%;
-        max-width: 300px; /* Reduz o limite máximo para celular */
+        max-width: 250px; 
         height: auto;
-        aspect-ratio: 1 / 1; /* Garante o quadrado perfeito */
+        aspect-ratio: 1 / 1;
+        margin: 0 auto; 
     }
 
-    /* Ajusta o triângulo indicador para o novo tamanho da roleta */
+    /* Ajuste da setinha da roleta */
     .roleta-page .marcador {
-        top: -12px;
-        border-top: 25px solid #FFFFFF;
-        border-left: 12px solid transparent;
-        border-right: 12px solid transparent;
+        top: -10px;
+        border-top: 20px solid #FFFFFF;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
     }
 
-    /* 5. "Espreme" a caixa de controles */
+    /* --- RETÂNGULO DE CONTROLES COM MAIS RESPIRO --- */
     .roleta-page .controles {
         width: 100%;
-        max-width: 320px;
-        padding: 15px; /* Reduz o espaçamento interno */
+        max-width: 310px; /* Um pouquinho mais largo pra caber os itens bem */
+        padding: 20px;    /* MAIS ESPAÇO: Respiro por dentro da caixa preta */
+        box-sizing: border-box;
+        margin: 0 auto; 
     }
 
-    /* 6. Ajusta o botão flutuante para não atrapalhar no celular */
+    /* Caixa de texto dos itens */
+    .roleta-page .editor-container {
+        height: 120px; 
+        margin-bottom: 20px; /* MAIS ESPAÇO: Afasta a caixa de texto das cores */
+    }
+
+    /* Botão Girar */
+    .roleta-page button#btnGirar { 
+        padding: 12px; 
+        font-size: 0.9rem; 
+        margin-top: 10px; /* MAIS ESPAÇO: Afasta o botão de iniciar as cores */
+    }
+
+    /* Caixa de Resultado */
+    .roleta-page .resultado-container { 
+        margin-top: 20px; /* MAIS ESPAÇO: Afasta o botão de sistema online */
+        min-height: 40px; 
+    }
+    .roleta-page #resultado { 
+        font-size: 1rem; 
+    }
+
+    /* Botão flutuante de voltar */
     .botao-voltar-fixo {
-        bottom: 15px;
+        bottom: 90px;
         left: 15px;
-        padding: 8px 15px;
-        font-size: 0.7rem;
+        padding: 8px 12px;
+        font-size: 0.65rem;
     }
 }
