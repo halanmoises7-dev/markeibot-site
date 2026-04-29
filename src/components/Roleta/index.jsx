@@ -8,6 +8,7 @@ const Roleta = () => {
   const audioCtxRef = useRef(null);
   
   const [frases, setFrases] = useState("PRÊMIO MASTER\nBÔNUS EXTRA\nTENTE NOVAMENTE\nSORTE GRANDE");
+  const [novoItem, setNovoItem] = useState("");
   const [cor1, setCor1] = useState("#0052FF");
   const [cor2, setCor2] = useState("#0A0E1A");
   const [resultado, setResultado] = useState("SISTEMA ONLINE");
@@ -145,14 +146,23 @@ const Roleta = () => {
     requestAnimationFrame(animar);
   };
 
+  const adicionarItem = (e) => {
+    e.preventDefault(); // Evita recarregar a página ao apertar Enter
+    if (novoItem.trim() === "") return;
+    const novaLista = frases ? `${frases}\n${novoItem.trim()}` : novoItem.trim();
+    setFrases(novaLista);
+    setNovoItem("");
+  };
+
+  const removerItem = (indexParaRemover) => {
+    const lista = frases.split('\n').filter(f => f.trim() !== "");
+    lista.splice(indexParaRemover, 1);
+    setFrases(lista.join('\n'));
+  };
+
   return (
     <div className="roleta-page">
       <div className="area-fundo"></div>
-      
-      {/* Botão Flutuante Inferior Esquerdo */}
-      <Link to="/" className="botao-voltar-fixo">
-        <span className="seta-voltar">←</span> INÍCIO
-      </Link>
 
       <h1 className="titulo-neon">MARKEIBOT <span className="destaque">ROLETA</span></h1>
 
@@ -175,13 +185,27 @@ const Roleta = () => {
             </button>
           </div>
           
-          <div className="editor-container">
-            <div className="numeracao-wrapper">
-              <div className="numeracao">
-                {frases.split('\n').map((_, i) => <div key={i}>{i + 1}</div>)}
-              </div>
+          {/* NOVO EDITOR DE ITENS */}
+          <div className="novo-editor-container">
+            <form onSubmit={adicionarItem} className="input-group">
+              <input 
+                type="text" 
+                value={novoItem} 
+                onChange={(e) => setNovoItem(e.target.value)} 
+                placeholder="Digite o item..." 
+                maxLength="25"
+              />
+              <button type="submit" className="btn-add">+</button>
+            </form>
+            
+            <div className="lista-visual">
+              {frases.split('\n').filter(f => f.trim() !== "").map((item, index) => (
+                <div key={index} className="item-lista">
+                  <span>{item}</span>
+                  <button type="button" onClick={() => removerItem(index)}>×</button>
+                </div>
+              ))}
             </div>
-            <textarea value={frases} onChange={(e) => setFrases(e.target.value)} spellCheck="false" wrap="off" />
           </div>
 
           <div className="container-cores">
@@ -203,6 +227,11 @@ const Roleta = () => {
           <div className="resultado-container">
             <div id="resultado">{resultado}</div>
           </div>
+
+          {/* BOTÃO VOLTAR SUTIL ABAIXO DO RESULTADO */}
+          <Link to="/" className="btn-voltar-sutil">
+            ← Voltar à página inicial
+          </Link>
         </div>
       </div>
       

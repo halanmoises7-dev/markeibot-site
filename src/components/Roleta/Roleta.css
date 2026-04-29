@@ -10,56 +10,41 @@
     position: relative; overflow: hidden;
 }
 
-/* BOTÃO VOLTAR FIXO NO CANTO INFERIOR ESQUERDO */
-.botao-voltar-fixo {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    background: var(--cor-glass);
-    border: 1px solid rgba(0, 123, 255, 0.3);
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    border-radius: 8px;
-    z-index: 999;
-    transition: 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.botao-voltar-fixo:hover {
-    background: var(--cor-neon);
-    box-shadow: 0 0 15px var(--cor-neon);
-    border-color: white;
-}
-
-.seta-voltar {
-    font-size: 1.1rem;
-}
-
 .roleta-page .area-fundo {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
     background: radial-gradient(circle at center, #0A0E1A 0%, #05070A 100%);
     background-image: linear-gradient(rgba(0, 82, 255, 0.05) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(0, 82, 255, 0.05) 1px, transparent 1px);
+                      linear-gradient(90deg, rgba(0, 82, 255, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
 }
 
 .roleta-page h1.titulo-neon { 
-    margin: 0 0 20px 0; font-size: 2.2rem; letter-spacing: 6px;
+    margin: 0 0 30px 0; font-size: 2.2rem; letter-spacing: 6px;
     font-weight: 900; text-shadow: 0 0 15px var(--cor-neon), 0 0 30px var(--cor-neon); 
     z-index: 1;
 }
 
 .roleta-page .titulo-neon .destaque { color: var(--cor-neon); font-weight: 900; }
 
-.roleta-page .layout { display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; align-items: center; z-index: 1; }
+/* === LAYOUT NO PC (LADO A LADO E COMPACTO) === */
+.roleta-page .layout { 
+    display: flex; 
+    flex-direction: row; 
+    gap: 40px; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1; 
+    width: 100%;
+    max-width: 950px; 
+}
 
-.roleta-page .roleta-wrapper { position: relative; width: 400px; height: 400px; flex-shrink: 0; }
+/* Roleta no PC com o tamanho perfeito (meio-termo) */
+.roleta-page .roleta-wrapper { 
+    position: relative; 
+    width: 400px; /* Aumentado para dar mais destaque */
+    height: 400px; 
+    flex-shrink: 0; 
+}
 
 .roleta-page .marcador {
     position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
@@ -73,33 +58,120 @@
     border: 6px solid var(--cor-neon); box-shadow: 0 0 30px rgba(0, 82, 255, 0.2);
 }
 
+/* === CAIXA DE CONTROLES NO PC MAIS FINA === */
 .roleta-page .controles { 
-    background: var(--cor-glass); padding: 25px; border-radius: 20px; 
-    width: 350px; border: 1px solid rgba(0, 82, 255, 0.2);
-    box-shadow: 0 15px 50px rgba(0,0,0,0.8);
+    background: var(--cor-glass); 
+    padding: 20px; 
+    border-radius: 16px; 
+    width: 320px; 
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 82, 255, 0.2);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    box-sizing: border-box;
 }
 
-.roleta-page .header-controles { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.roleta-page .header-controles { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
 .roleta-page .header-controles h3 { margin: 0; font-size: 0.8rem; letter-spacing: 2px; color: var(--cor-neon); }
 
-.roleta-page .btn-mudo-neon { background: none; border: 1px solid #1e2533; color: white; border-radius: 6px; cursor: pointer; padding: 5px; }
+.roleta-page .btn-mudo-neon { background: none; border: 1px solid #1e2533; color: white; border-radius: 6px; cursor: pointer; padding: 4px; font-size: 0.85rem; }
 
-.roleta-page .editor-container {
-    display: flex; border: 1px solid #1e2533; border-radius: 10px;
-    height: 180px; background-color: #05070a; overflow: hidden; margin-bottom: 15px;
+.roleta-page .novo-editor-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
 }
 
-.roleta-page .numeracao-wrapper { background-color: rgba(0, 82, 255, 0.1); border-right: 1px solid #1e2533; }
-.roleta-page .numeracao { width: 40px; padding-top: 10px; text-align: center; font-size: 13px; line-height: 24px; color: var(--cor-neon); font-weight: bold; }
+.roleta-page .input-group {
+    display: flex;
+    gap: 8px;
+}
 
-.roleta-page textarea {
-    flex: 1; padding: 10px; border: none; outline: none; resize: none;
-    font-size: 14px; line-height: 24px; font-family: 'Consolas', monospace; 
-    background: transparent; color: #fff;
+.roleta-page .input-group input {
+    flex: 1;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #1e2533;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+    outline: none;
+    font-family: 'Segoe UI', sans-serif;
+    transition: 0.3s;
+}
+
+.roleta-page .input-group input:focus {
+    border-color: var(--cor-neon);
+}
+
+.roleta-page .input-group .btn-add {
+    background: var(--cor-neon);
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+    width: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.roleta-page .input-group .btn-add:hover {
+    box-shadow: 0 0 12px var(--cor-neon);
+}
+
+.roleta-page .lista-visual {
+    background: rgba(5, 7, 10, 0.5);
+    border: 1px solid #1e2533;
+    border-radius: 8px;
+    height: 120px; 
+    overflow-y: auto;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.roleta-page .lista-visual::-webkit-scrollbar { width: 4px; }
+.roleta-page .lista-visual::-webkit-scrollbar-track { background: transparent; }
+.roleta-page .lista-visual::-webkit-scrollbar-thumb { background: var(--cor-neon); border-radius: 4px; }
+
+.roleta-page .item-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: #e2e8f0;
+}
+
+.roleta-page .item-lista button {
+    background: rgba(255, 77, 77, 0.15);
+    border: none;
+    color: #ff4d4d;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.roleta-page .item-lista button:hover {
+    background: #ff4d4d;
+    color: white;
 }
 
 .roleta-page .container-cores { margin-bottom: 15px; }
-.roleta-page .label-cores { display: block; font-size: 0.65rem; letter-spacing: 1.5px; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+.roleta-page .label-cores { display: block; font-size: 0.65rem; letter-spacing: 1.5px; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
 
 .roleta-page .seletor-cores { display: flex; align-items: center; justify-content: space-between; }
 .roleta-page .inputs-cor { display: flex; gap: 5px; }
@@ -107,28 +179,43 @@
 
 .roleta-page .btn-reset-neon {
     background: none; border: 1px solid #1e2533; color: #576574; border-radius: 6px;
-    font-size: 0.6rem; padding: 5px 6px; cursor: pointer; text-transform: uppercase;
+    font-size: 0.6rem; padding: 6px 8px; cursor: pointer; text-transform: uppercase;
 }
 
 .roleta-page button#btnGirar { 
-    width: 100%; padding: 16px; font-size: 1rem; font-weight: bold; 
+    width: 100%; padding: 12px; font-size: 0.95rem; font-weight: bold; 
     cursor: pointer; border: 2px solid var(--cor-neon); border-radius: 10px; 
     background: transparent; color: #fff; transition: 0.4s; letter-spacing: 2px;
 }
 .roleta-page button#btnGirar:hover { background: var(--cor-neon); box-shadow: 0 0 25px var(--cor-neon); }
 
-.roleta-page .resultado-container { margin-top: 15px; min-height: 50px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); border-radius: 10px; border: 1px solid rgba(0, 82, 255, 0.1); }
-.roleta-page #resultado { font-size: 1.2rem; font-weight: bold; color: #fff; text-shadow: 0 0 10px var(--cor-neon); }
+.roleta-page .resultado-container { margin-top: 15px; min-height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); border-radius: 10px; border: 1px solid rgba(0, 82, 255, 0.1); }
+.roleta-page #resultado { font-size: 1.05rem; font-weight: bold; color: #fff; text-shadow: 0 0 10px var(--cor-neon); }
 
-.roleta-page footer { margin-top: 15px; font-size: 0.7rem; color: #646568; z-index: 1; text-align: center; }
+.roleta-page .btn-voltar-sutil {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.roleta-page .btn-voltar-sutil:hover {
+    color: var(--cor-neon);
+}
+
+.roleta-page footer { margin-top: 10px; font-size: 0.8rem; color: #646568; z-index: 1; text-align: center; }
 
 /* =========================================
    REGRAS EXCLUSIVAS PARA O MOBILE (CELULARES)
    ========================================= */
-@media (max-width: 768px) {
-    /* Respiro no final para a barra inferior não cobrir o rodapé */
+@media (max-width: 850px) {
     .roleta-page {
-        padding-top: 25px; /* Um pouco mais de espaço no topo da tela */
+        padding-top: 25px; 
         padding-bottom: 0px; 
         justify-content: flex-start;
         width: 100%;
@@ -136,84 +223,66 @@
         box-sizing: border-box;
     }
 
-    /* Título com respiro para a roleta */
     .roleta-page h1.titulo-neon {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         text-align: center;
         width: 100%;
         letter-spacing: 3px;
-        margin-bottom: 35px; /* MAIS ESPAÇO: Afasta o título da roleta */
+        margin-bottom: 25px; 
     }
 
-    /* Container principal - Afasta a roleta da caixa preta */
     .roleta-page .layout {
-        flex-direction: column;
-        gap: 35px; /* MAIS ESPAÇO: Distância entre a roleta e a caixa preta */
+        flex-direction: column; 
+        gap: 30px; 
         width: 100%;
         padding: 0 15px;
         box-sizing: border-box;
-        margin: 0;
     }
 
-    /* Roleta centralizada */
     .roleta-page .roleta-wrapper {
         width: 100%;
-        max-width: 250px; 
+        max-width: 280px; 
         height: auto;
         aspect-ratio: 1 / 1;
         margin: 0 auto; 
     }
 
-    /* Ajuste da setinha da roleta */
     .roleta-page .marcador {
-        top: -10px;
-        border-top: 20px solid #FFFFFF;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
+        top: -12px;
+        border-top: 22px solid #FFFFFF;
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
     }
 
-    /* --- RETÂNGULO DE CONTROLES COM MAIS RESPIRO --- */
     .roleta-page .controles {
         width: 100%;
-        max-width: 310px; /* Um pouquinho mais largo pra caber os itens bem */
-        padding: 20px;    /* MAIS ESPAÇO: Respiro por dentro da caixa preta */
+        max-width: 350px; 
+        padding: 16px;    
         box-sizing: border-box;
         margin: 0 auto; 
     }
 
-    /* Caixa de texto dos itens */
-    .roleta-page .editor-container {
-        height: 120px; 
-        margin-bottom: 20px; /* MAIS ESPAÇO: Afasta a caixa de texto das cores */
+    .roleta-page .lista-visual {
+        height: 90px; 
     }
 
-    /* Botão Girar */
     .roleta-page button#btnGirar { 
         padding: 12px; 
         font-size: 0.9rem; 
-        margin-top: 10px; /* MAIS ESPAÇO: Afasta o botão de iniciar as cores */
+        margin-top: 5px; 
     }
 
-    /* Caixa de Resultado */
     .roleta-page .resultado-container { 
-        margin-top: 20px; /* MAIS ESPAÇO: Afasta o botão de sistema online */
+        margin-top: 15px; 
         min-height: 40px; 
     }
+    
     .roleta-page #resultado { 
-        font-size: 1rem; 
+        font-size: 0.95rem; 
     }
 
-    /* NOVO: Ajuste fino no rodapé para eliminar a sobra */
     .roleta-page footer {
         margin-top: 25px;
-        margin-bottom: 20px; /* Mantém um pequeno respiro antes da barra do MarkeiBot */
-    }
-
-    /* Botão flutuante de voltar */
-    .botao-voltar-fixo {
-        bottom: 20px;
-        left: 15px;
-        padding: 8px 12px;
-        font-size: 0.65rem;
+        margin-bottom: 20px;
     }
 }
