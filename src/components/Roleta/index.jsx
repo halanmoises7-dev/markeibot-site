@@ -16,6 +16,41 @@ const Roleta = () => {
   const [rotacionando, setRotacionando] = useState(false);
   const [anguloAtual, setAnguloAtual] = useState(0);
 
+  // === BLOQUEADOR DO CHAT E DO BALÃO ===
+  useEffect(() => {
+    // 1. Força a esconder o balão de teste direto no HTML
+    const balao = document.getElementById('balao-halan-v3');
+    if (balao) {
+        balao.style.setProperty('display', 'none', 'important');
+    }
+
+    // 2. Cria um CSS Global temporário para "esmagar" o widget do MarkeiBot
+    const blockStyle = document.createElement('style');
+    blockStyle.id = 'trava-chat-roleta';
+    blockStyle.innerHTML = `
+      #balao-halan-v3 { display: none !important; }
+      /* Como os chats rodam em iframes, bloqueamos qualquer iframe nessa tela */
+      iframe { display: none !important; }
+      /* Bloqueia elementos com z-index gigante (padrão de widgets de chat) */
+      div[style*="z-index: 2147483647"] { display: none !important; }
+      div[style*="z-index: 999999"] { display: none !important; }
+      div[style*="z-index: 99999"] { display: none !important; }
+    `;
+    document.head.appendChild(blockStyle);
+
+    // 3. Quando o usuário SAIR da Roleta, a gente devolve o chat e o balão!
+    return () => {
+      const styleTag = document.getElementById('trava-chat-roleta');
+      if (styleTag) styleTag.remove();
+      
+      // Restaura o balão caso ele queira testar nas outras páginas
+      if (balao) {
+          balao.style.display = 'flex';
+      }
+    };
+  }, []);
+  // ======================================
+
   useEffect(() => {
     desenharRoleta();
   }, [frases, cor1, cor2]);
@@ -147,7 +182,7 @@ const Roleta = () => {
   };
 
   const adicionarItem = (e) => {
-    e.preventDefault(); // Evita recarregar a página ao apertar Enter
+    e.preventDefault(); 
     if (novoItem.trim() === "") return;
     const novaLista = frases ? `${frases}\n${novoItem.trim()}` : novoItem.trim();
     setFrases(novaLista);
@@ -185,7 +220,6 @@ const Roleta = () => {
             </button>
           </div>
           
-          {/* NOVO EDITOR DE ITENS */}
           <div className="novo-editor-container">
             <form onSubmit={adicionarItem} className="input-group">
               <input 
@@ -228,7 +262,6 @@ const Roleta = () => {
             <div id="resultado">{resultado}</div>
           </div>
 
-          {/* BOTÃO VOLTAR SUTIL ABAIXO DO RESULTADO */}
           <Link to="/" className="btn-voltar-sutil">
             ← Voltar à página inicial
           </Link>
